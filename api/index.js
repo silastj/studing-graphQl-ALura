@@ -1,4 +1,5 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer } = require('apollo-server')
+const userSchema = require('./users/schema/user.graphql')
 
 const users = [
   {
@@ -10,18 +11,12 @@ const users = [
     ativo: false
   }
 ]
-console.log(typeof(users))
+console.log(users)
 
-// SDL(Schema Definition Language)
-// Receber o GQL para o javascript entender o schema abaixo
-// schema com o GQL faz o javascript entender a linguaguem
-
-const typeDefs = gql`
-  type User {
-    nome: String!
-    ativo: String!
-    email: String
-  }
-`
+const typeDefs = [userSchema]
+const resolvers = {}
 
 const server = new ApolloServer({ typeDefs, resolvers})
+server.listen().then(({url}) => {
+  console.log(`Servidor rodando na porta: ${url}` )
+})
