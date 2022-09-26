@@ -3,7 +3,8 @@
 - nodemon": "^2.0.4"
 - apollo-server": "^3.10.2",
 - graphql": "^16.6.0",
--
+- apollo-datasource-rest": "^3.7.0",
+- graphql-tools": "^8.3.6",
 
 
 # Resources
@@ -15,7 +16,10 @@
 -- depois que instalar o graphql e apollo-server
 - npm run start
 
-
+# Baby Step
+- Definimos o Schema composta por tipos (.graphql)
+- Resolvemos no arquivo(userResolvers.js) tudo que definimos no schema
+- Juntamos tudo isso no Apollo-server(index.js) os typeDefs e resolvers para funcionar
 
 
 
@@ -68,6 +72,8 @@ const userSchema = gql`
   }
 `
 module.exports = userSchema
+
+
 
 
 
