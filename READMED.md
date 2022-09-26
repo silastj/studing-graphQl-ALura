@@ -22,25 +22,37 @@
 
 # Course Alura
 
-- Nesta aula, aprendemos:
+- Nesta aula, aprendemos(01):
 - Fundamentos do GraphQL
 - Como criar um servidor GraphQL usando ApolloServer
 - Utilizar a SDL, linguagem de definiçao de schema do GraphQL
 - Criar um schema e definir um tipo
 - Quais os tipos básicos do GraphQL e seus campos
 
+- Nesta aula, aprendemos(02):
+- Organizar a aplicação em camadas e vincular o schema do Apollo Server
+- Criar um ponto de entrada para a API através de um tipo Query
+- Subir o servidor GraphQL
+- Criar resolvers para implementar as definições do schema
+- Utilizar o Playground para fazer testes e consultar a documentação    automática
 
+
+
+
+
+# Schema 
+- Schema é oq pode ser feito no graphql
+
+
+# Resolvers
+- Resolvers é as funções que iremos resolver para implementar oq foi defenido no schema
 
 # Outhers
-
-## Schema é oq pode ser feito no graphql
-
-
-## Resolvers é as funções que iremos resolver para implementar oq foi defenido no schema
-
 - SDL(Schema Definition Language)
 - Receber o GQL para o javascript entender o schema abaixo
 - Schema com o GQL faz o javascript entender a linguaguem
+- A exclamação depois do type no schema é campo obrigatorio
+
 const { gql } = require('apollo-server')
 const userSchema = gql`
   type User {
@@ -56,5 +68,8 @@ const userSchema = gql`
   }
 `
 module.exports = userSchema
+
+
+
 
 
