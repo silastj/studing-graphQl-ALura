@@ -1,21 +1,12 @@
 
-const arrayUsers = [
-  {
-    nome: 'Silas',
-    ativo: true
-  },
-  {
-    nome: 'Amós',
-    ativo: false
-  }
-]
-console.log(arrayUsers)
-
 const useResolvers = {
   Query: {
-    users: () => arrayUsers,
-    primeiroUser: () => arrayUsers[0]
+    users: (root, args, {dataSources}) => dataSources.usersAPI.getUsers(),
+    user: (root, {id}, {dataSources}) => dataSources.usersAPI.getUserById(id)
   }
+  // Query: {
+  //   roles: ({dataSources}) => dataSources.usersAPI.getRoles()
+  // }
 }
 
 

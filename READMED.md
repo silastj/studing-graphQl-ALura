@@ -40,17 +40,15 @@
 - Criar resolvers para implementar as definições do schema
 - Utilizar o Playground para fazer testes e consultar a documentação    automática
 
-
-
-
-
 # Schema 
 - Schema é oq pode ser feito no graphql
 
 
 # Resolvers
 - Resolvers é as funções que iremos resolver para implementar oq foi defenido no schema
-
+- Parametros (root) - Pega o anterior que a Chave principal
+            (args) - arugumentos como ex: ID
+            (context) - 
 # Outhers
 - SDL(Schema Definition Language)
 - Receber o GQL para o javascript entender o schema abaixo
