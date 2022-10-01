@@ -41,6 +41,27 @@
       "ativo": true,
       "email": "m@m.com",
       "role": 2
+    },
+    {
+      "nome": "Amós Silas",
+      "ativo": true,
+      "email": "silastj@hotmail.com",
+      "role": 1,
+      "id": 7
+    },
+    {
+      "nome": "Amós Silas",
+      "ativo": true,
+      "email": "silastj@hotmail.com",
+      "role": 1,
+      "id": 8
+    },
+    {
+      "nome": "Silas",
+      "ativo": true,
+      "email": "silastj@hotmail.com",
+      "role": 2,
+      "id": 9
     }
   ],
   "roles": [

@@ -12,15 +12,15 @@
 - http://localhost:3000/roles
 
 # Run Project
-- npx json-server --watch api/data/dados.json
--- depois que instalar o graphql e apollo-server
+- npx json-server --watch api/data/dados.json ( aqui eu vou subir o servidor )
+-- depois que instalar o graphql e apollo-server ( aqui eu vou subir o servidor apollo )
 - npm run start
 
 # Baby Step
-- Definimos o Schema composta por tipos (.graphql)
+- Definimos o Schema composta por tipos (.graphql)  - Query
 - Resolvemos no arquivo(userResolvers.js) tudo que definimos no schema
 - Juntamos tudo isso no Apollo-server(index.js) os typeDefs e resolvers para funcionar
-
+- Resolvers 
 
 
 
@@ -40,6 +40,13 @@
 - Criar resolvers para implementar as definições do schema
 - Utilizar o Playground para fazer testes e consultar a documentação    automática
 
+- Conectar com uma base de dados (endpoints rest)
+- Unir schema, resolver e dados
+- Parâmetros do resolver para que servem
+- Como utilizar parâmetros no GraphQL
+- Utilizar parâmetros nas queries
+- Trabalhar com dados de diferentes fontes/endpoints
+
 # Schema 
 - Schema é oq pode ser feito no graphql
 
@@ -55,6 +62,7 @@
 - Schema com o GQL faz o javascript entender a linguaguem
 - A exclamação depois do type no schema é campo obrigatorio
 
+# Query - consulta
 const { gql } = require('apollo-server')
 const userSchema = gql`
   type User {
@@ -71,7 +79,41 @@ const userSchema = gql`
 `
 module.exports = userSchema
 
+# Mutations - calculos operacionais
 
+- Ele é criado para executar alterações 
+- Exemplor: AdicionarUser
+- Criamos um mutations dentro .graphql e adicionamos um metodo, com os tipos de dados que recebemos e parametros.
+
+type Mutation {
+    adicionarUser(
+      nome: String!,
+      ativo: Boolean!,
+      email: String,
+      role: String!
+    ): User!
+  } 
+  
+  - userResolvers.js
+
+  Mutation: {
+    adicionarUser: (rooot, user, {dataSources}) => dataSources.usersAPI.adicionarUser(user)
+  }
+
+  - datasource\user.js
+  
+  async adicionarUser(user) {
+    const users = await this.get('/users/')
+    users.id = users.length + 1
+    const role =await this.get(`roles?types=${user.role}`)
+    await this.post('users', {...user, role: role[0].id})
+    return ({
+      ...user,
+      role: role[0]
+    })
+  }
+
+-
 
 
 
