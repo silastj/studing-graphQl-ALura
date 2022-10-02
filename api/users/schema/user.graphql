@@ -24,6 +24,19 @@ const userSchema = gql`
       ativo: Boolean!,
       email: String,
       role: String!
-    ): User!}
+    ): User!
+    
+    atualizaUser(
+      id: ID!,
+      nome: String!,
+      ativo: Boolean!,
+      email: String,
+      role: String!
+    ): User!
+
+    deleteUser(
+      id:ID!
+    ): ID!
+  }
 `
 module.exports = userSchema
