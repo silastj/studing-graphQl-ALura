@@ -6,15 +6,16 @@ const UsersAPI = require('./users/datasource/user')
 const typeDefs = [userSchema]
 const resolvers = [useResolvers]
 
-const server = new ApolloServer({ 
+const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => {
     return {
       usersAPI: new UsersAPI()
     }
-} })
+  }
+})
 
-server.listen().then(({url}) => {
-  console.log(`Servidor rodando na porta: ${url}` )
+server.listen().then(({ url }) => {
+  console.log(`Servidor rodando na porta: ${url}`)
 })
