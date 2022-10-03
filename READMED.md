@@ -47,6 +47,15 @@
 - Utilizar parâmetros nas queries
 - Trabalhar com dados de diferentes fontes/endpoints
 
+- Criar mutations para alteração de dados
+- Como inserir e alterar dados em objetos que recebem outros objetos como campo
+- Utilizar o resolver para implementar mutations
+
+- Criar tipos scalar customizados para formatos que precisam de validação, como datas
+- Utilizar Enums para especificar os possíveis valores de um campo
+- Organizar a inserção de dados no schema com Input
+- Implementar interface para melhorar as mensagens de resposta para o cliente
+
 # Schema 
 - Schema é oq pode ser feito no graphql
 

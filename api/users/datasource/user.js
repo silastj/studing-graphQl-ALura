@@ -3,7 +3,11 @@ const { RESTDataSource } = require('apollo-datasource-rest')
 class UsersAPI  extends RESTDataSource {
   constructor() {
     super()
-    this.baseURL = 'http://localhost:3000'
+    this.baseURL = 'http://localhost:3000',
+    this.respostaCustom = {
+      code: 200,
+      mensagem: "Operação efetuada com Sucesso!!"
+    }
   }
 
   async getUsers() {
@@ -39,22 +43,21 @@ class UsersAPI  extends RESTDataSource {
   }
 
   async atualizaUser(novosDados){
-    const role = await this.get(`roles?type=${novosDados.role}`)
-    console.log('role ', role)
-
-    await this.put(`users/${novosDados.id}`, {...novosDados, role: role[0].id})
-    console.log('novos dados ', novosDados)
-    console.log('new role ', role)
+    const role = await this.get(`roles?type=${novosDados.user.role}`)
+    await this.put(`users/${novosDados.id}`, {...novosDados.user, role: role[0].id})
     return ({
-      ...novosDados,
-      role: role[0]
+      ...this.respostaCustom,
+      user: {
+        ...novosDados.user,
+        role: role[0]
+      }
     })
   }
 
   async deleteUser(id){
     if(id){
       await this.delete(`/users/${id}`)
-      return id
+      return this.respostaCustom
     }
   }
 }
