@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/alura-cursos/1922-graphql#readme",
   "dependencies": {
+    "@graphql-tools/merge": "^8.3.6",
+    "@graphql-tools/schema": "^9.0.4",
     "apollo-datasource-rest": "^3.7.0",
     "apollo-server": "^3.10.2",
+    "datasource-sql": "^2.0.1",
     "graphql": "^16.6.0",
     "graphql-tools": "^8.3.6",
     "json-server": "^0.16.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "sqlite3": "^5.1.2"
   }
 }

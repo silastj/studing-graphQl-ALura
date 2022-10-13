@@ -12,9 +12,12 @@
 - http://localhost:3000/roles
 
 # Run Project
-- npx json-server --watch api/data/dados.json ( aqui eu vou subir o servidor )
+- baixar o repo( clonar o repositório)
+- npm install 
+- abrir (1) && (2) terminal
+- (1)npx json-server --watch api/data/dados.json ( aqui eu vou subir o servidor )
 -- depois que instalar o graphql e apollo-server ( aqui eu vou subir o servidor apollo )
-- npm run start
+- (2)npm run start
 
 # Baby Step
 - Definimos o Schema composta por tipos (.graphql)  - Query
