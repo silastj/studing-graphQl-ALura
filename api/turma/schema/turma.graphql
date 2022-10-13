@@ -11,6 +11,7 @@ const turmaSchema = gql`
     inicio: DateTime
     docente: User!
     createAt: DateTime!
+    matriculas: [Matricula]
   }
 
   type Query{
